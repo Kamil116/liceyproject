@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ parol.title }}
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>{{ parol.title }}</h1>
+
+    <div class="alert alert-info">
+        <h3>Пароль: {{ parol.text }}</h3>
+        <a href="/parols/{{ parol.id }}/del" class="btn btn-danger">Удалить</a>
+        <a href="/parols/{{ parol.id }}/update" class="btn btn-success">Редактировать</a>
+    </div>
+</div>
+{% endblock %}

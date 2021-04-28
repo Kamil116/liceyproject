@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Все ваши пароли
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Все пароли</h1>
+    {% if parols|length > 0 %}
+        {% for el in parols %}
+        <div class="alert alert-info">
+            <h2>Сайт: {{ el.title }}</h2>
+            <h3>Пароль: {{ el.text }}</h3>
+            <p><b>{{ el.date.date() }}</b></p>
+            <a href="/parols/{{ el.id }}" class="btn btn-warning">Детальнее</a>
+        </div>
+        {% endfor %}
+    {% else %}
+    <p>У вас ещё нет паролей</p>
+    {% endif %}
+</div>
+{% endblock %}

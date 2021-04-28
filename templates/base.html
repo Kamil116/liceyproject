@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom">
+    <a class='my-0 mr-md-auto front-weight-normal' style="font-weight:bold; font-size:18pt; color:black" href='/'>mirgasimovk</a>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="/">Главная</a>
+        <a class="p-2 text-dark" href="/parols">Пароли</a>
+    </nav>
+    <a class='btn btn-warning' href="/create-parol">Создать</a>
+</div>
+{% block body %}{% endblock %}
+
+<footer class="container pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+        <div class="col-12 col-md">
+            <small class="d-block mb-3 text-muted">© 2021–2021</small>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
