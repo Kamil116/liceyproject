@@ -1,12 +1,23 @@
-<h1>Регистрация</h1>
+{% extends 'base.html' %}
+
+{% block title %}
+Регистрация
+{% endblock %}
+
+{% block body %}
 <div class="container mt-5">
+    {% for category, message in get_flashed_messages(with_categories=true) %}
+    <spam style="font-size:28px;color:red" class="{{ category }}">{{ message }}</spam>
+    {% endfor %}
+    <h1>Регистрация</h1>
     <div class="alert alert-info">
         <form method="POST">
-            <input type="text" name="Username" class="form-control" placeholder="Your username"><br>
+            <input type="text" name="Username" class="form-control" placeholder="Имя пользователя"><br>
             <br>
-            <input type="text" name="Password" class="form-control" placeholder="Your password"><br>
+            <input type="password" name="Password" class="form-control" placeholder="Пароль"><br>
             <br>
             <input type="submit" class="btn btn-success">
         </form>
     </div>
 </div>
+{% endblock %}

@@ -10,9 +10,8 @@
     {% if parols|length > 0 %}
         {% for el in parols %}
         <div class="alert alert-info">
-            <h2>Сайт: {{ el.title }}</h2>
-            <h3>Пароль: {{ el.text }}</h3>
-            <p><b>{{ el.date.date() }}</b></p>
+            <h2><a href="https://{{ el.site }}">{{ el.site }}</a></h2>
+            <h3>Пароль: {{ el.passw }}</h3>
             <a href="/parols/{{ el.id }}" class="btn btn-warning">Детальнее</a>
         </div>
         {% endfor %}

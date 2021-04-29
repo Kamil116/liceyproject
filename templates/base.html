@@ -14,9 +14,15 @@
     <a class='my-0 mr-md-auto front-weight-normal' style="font-weight:bold; font-size:18pt; color:black" href='/'>mirgasimovk</a>
     <nav class="my-2 my-md-0 mr-md-3">
         <a class="p-2 text-dark" href="/">Главная</a>
+        {% if current_user.is_authenticated %}
         <a class="p-2 text-dark" href="/parols">Пароли</a>
+        <a class='btn btn-warning' href="/create-parol">Создать пароль</a>
+        <a class='btn btn-info'>Здравствуйте, {{ current_user.username }}</a>
+        <a class='btn btn-success' href="/logout">Выйти</a>
+        {% else %}
+        <a class='btn btn-success' href="/register">Зарегестрироваться</a>
+        {% endif %}
     </nav>
-    <a class='btn btn-warning' href="/create-parol">Создать</a>
 </div>
 {% block body %}{% endblock %}
 
